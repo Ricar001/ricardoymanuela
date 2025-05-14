@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo & Manuela</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        
+        body {
+            font-family: 'Great Vibes', cursive;
+            margin: 0;
+            padding: 0;
+            background: url(img/Catedral_Primada_de_America_panorama_noche_CCSD_03_2019_4863.jpg) no-repeat center center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: rgba(25, 25, 25, 1);
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        h1, p {
+            font-family: 'Great Vibes', cursive;
+        }
+        h1 {
+            font-size: 4.7em;
+            font-weight: 400;
+            margin: 0;
+        }
+        .date {
+            font-size: 2.8em;
+            color: #ffc400;
+            margin-top: 10px;
+        }
+        .location {
+            font-size: 2em;
+            margin-top: 5px;
+        }
+        .countdown {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #ff4500;
+        }
+        .rsvp-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 2.2em;
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .rsvp-button:hover {
+            background-color: #b08b2e;
+        }
+        .message {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+        .donation {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #ffcc00;
+        }
+        .recepcion { 
+            font-size: 2em ;
+
+        }
+
+            .rere{
+                font-size: 1.6em;
+            }
+
+            .cuentas{
+                font-size: 1.2em;
+            }
+        
+            .ninos{
+                font-size: 1.5em;
+                color: #ffffff;
+            }
+
+            .listar {
+
+                color: #ff4500;
+                font-size: 1.3em;
+                
+
+            }
+    </style>
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date('2025-08-22T00:00:00').getTime();
+            setInterval(() => {
+                const now = new Date().getTime();
+                const timeLeft = weddingDate - now;
+                
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+    </script>
+</head>
+<body onload="updateCountdown()">
+    <div class="overlay"></div>
+    <div class="content">
+        <br>
+        <h1>Ricardo y Manuela</h1>
+        <p class="message"> ¡Nos casaremos, Celebra con nosotros!</p>
+        <p class="date">Viernes 22 de Agosto, 2025</p>
+        <p class="location">Catedral Primada de América <br> <p class="rere">C/ Arsobizpo Meriño, Casi esq. C/ Arzobispo Nouel</p> <br> <p class="location"> Hora <br> 5:25 pm </p> 
+        <p class="countdown" id="countdown"></p>
+        <p class="recepcion">Recepción: <br>Salón de Eventos Vista Marina <br> Av. España No. 70, Santo Domingo Este</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4ncm8NH4i6frDyatfVAVe6zP0RXQd4IRpQ0oHRoQh3BSaWw/viewform?usp=dialog" target="_blank"  class="rsvp-button">Confirmar Asistencia</a>
+        
+        <p class="ninos"> Niños Dulces Sueños En Casa</p>
+
+        <p class="donation">Su presencia en nuestra boda es el mejor regalo. Si desean contribuir de otra manera, una ayuda para la construcción de nuestro hogar será recibida con mucho amor y gratitud. 
+
+            <br><a href="https://drive.google.com/file/d/1ldLhByjL4qcUmm__rG4RY1GR63Ml61o8/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="listar">Click para ver lista de regalos</a>
+
+            <br>
+            <br> <span class="cuentas">Cuentas Bancarias:</span>
+            <br> <span style="font-family: 'Courier New', Courier, monospace;" >Reservas</span>: 960 0115 216
+            <br> <span style="font-family: 'Courier New', Courier, monospace;" >Popular</span>: 848 074 100
+            <br>  <span style="font-family: 'Courier New', Courier, monospace;" >BHD</span>: 335 183 70013 <br> Manuela Castro (Ced.: 402-2532668-1). <br>
+            <br><span style="font-family: 'Courier New', Courier, monospace;;" >APAP</span>: 103 326 5276  <br> Ricardo De Jesus (Ced.: 402-2265377-2). 
+             </p>   
+    </div>
+
+    <audio id="bg-audio" src="The Legend of Zelda_ Ocarina of Time  Title Theme  近藤浩治 [Koji Kondo].mp3" loop style="display: none;"></audio>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.addEventListener('click', function () {
+          document.getElementById('bg-audio').play();
+        }, { once: true });
+      });
+    </script>
+
+</body>
+</html>
+
+
