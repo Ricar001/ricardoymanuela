@@ -171,6 +171,19 @@ body::before {
     <audio id="bg-audio" src="The Legend of Zelda_ Ocarina of Time  Title Theme  近藤浩治 [Koji Kondo].mp3" loop style="display: none;"></audio>
 
     <script>
+    const audio = document.getElementById("bg-audio");
+
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            audio.pause(); // Pausar cuando se minimiza o cambia de pestaña
+        } else {
+            audio.play(); // Opcional: volver a reproducir cuando regresa
+        }
+    });
+</script>
+
+
+    <script>
       document.addEventListener('DOMContentLoaded', function () {
         document.body.addEventListener('click', function () {
           document.getElementById('bg-audio').play();
