@@ -8,22 +8,36 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         
-        body {
-            font-family: 'Great Vibes', cursive;
-            margin: 0;
-            padding: 0;
-            background: url(img/Catedral_Primada_de_America_panorama_noche_CCSD_03_2019_4863.jpg) no-repeat center center/cover;
-            background-attachment: fixed;
-            background-size: cover;
-            background-color: rgba(25, 25, 25, 1);
-            
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
+   body {
+    font-family: 'Great Vibes', cursive;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fondo fijo simulado con pseudo-elemento */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('img/Catedral_Primada_de_America_panorama_noche_CCSD_03_2019_4863.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 1; /* puedes ajustar la opacidad si necesitas */
+}
+
         .overlay {
             position: absolute;
             top: 0;
